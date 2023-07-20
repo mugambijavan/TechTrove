@@ -133,7 +133,7 @@ width: 100%;
   background-color: #dcdcdc;
   border-radius: 15px;
   position: relative;
-  height: 500px;
+  height: 100%;
   line-height: 0.9; 
   width: 100%;
 
@@ -244,13 +244,31 @@ text-align: end;
 .banner-desc .left p{
   margin:18px;
 }
-.footer-banner-image{
+.footer-banner-image {
   position: absolute;
-  /* top: -35%;
-  left: 8%; */
   top: -25%;
   left: 25%;
+  max-width: 100%; /* Set a maximum width for the image */
+  max-height: 100%; /* Set a maximum height for the image */
+  width: auto; /* Let the image scale proportionally within its maximum dimensions */
+  height: auto; /* Let the image scale proportionally within its maximum dimensions */
 }
+
+/* Add media queries to adjust the image position for different screen sizes */
+@media (max-width: 768px) {
+  .footer-banner-image {
+    top: -20%;
+    left: 15%;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-banner-image {
+    top: -15%;
+    left: 10%;
+  }
+}
+
 .banner-desc .right{
   line-height: 1.4;
 }
